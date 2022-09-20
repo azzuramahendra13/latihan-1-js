@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestJS</title>
+</head>
+<body>  
+    <h1>LOGIN</h1>
+    <form onsubmit="submit_form()">
+        <h2>USERNAME</h2>
+        <input type="text" placeholder="Masukkan email">
+        <h2>PASSWORD</h2>
+        <input type="text" placeholder="Masukkan password">
+        <br><br>
+        <input type="submit" value="Login">
+        <input type="button" value="Sign Up" onclick="create()">
+
+    </form>
+    <script type="text/javascript">
+        function submit_form() {
+            alert("Login Berhasil");
+        }
+
+        function create() {
+            window.location = "signup.html";
+        }
+
+    </script>
+    
+</body>
+</html>

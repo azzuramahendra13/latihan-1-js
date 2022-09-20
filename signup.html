@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body align="center">
+    <h1>MEMBUAT AKUN</h1>
+
+    <table align="center" cellspacing="2" cellpadding="8">
+        <tr>
+            <td>Nama</td>
+            <td><input type="text" placeholder="Masukkan nama Anda" id="n1"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" placeholder="Masukkan email Anda" id="e1"></td>
+        </tr>
+        <tr>
+            <td>Pilih Password</td>
+            <td><input type="password" placeholder="Masukkan password Anda" id="p1"></td>
+        </tr>
+        <tr>
+            <td>Konfirmasi Password</td>
+            <td><input type="password" placeholder="Konfirmasi password Anda" id="p2"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Buat" onclick="create_account()"></td>
+        </tr>
+    </table>
+
+
+
+    <script type="text/javascript">
+        function create_account() {
+            var n = document.getElementById("n1").value;
+            var e = document.getElementById("e1").value;
+            var p = document.getElementById("p1").value;
+            var cp = document.getElementById("p2").value;
+            console.log(n, e, p, cp);
+            // Untuk validasi
+            var letters = /^[A-Za-z]+$/;
+            var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2, 4})+$/;
+
+            // Untuk validasi lain
+            if (n == '' || e == '' || p == '' || cp == '') {
+                alert("Masukkan setiap data dengan benar");
+            }
+
+            else if (!letters.test(n)) {
+                alert("Nama hanya boleh alfabet");
+            }
+
+            else if (!email_val.test(e)) {
+                alert("Email tidak valid");
+            }
+
+            else if (p != cp) {
+                alert("Password tidak sesuai");
+            }
+
+            else if (document.getElementById("p1").value.length > 12) {
+                alert("Panjang password maksimal adalah 12");
+            }
+
+            else if (document.getElementById("p1").value.length < 6) {
+                alert("Panjang password minimal adalah 6");
+            }
+
+            else {
+                alert("Akun berhasil dibuat... Mengarahkan ke JavaTPoint.com");
+                window.location = "https://www.javatpoint.com";
+            }
+        }
+    </script>
+</body>
+</html>
